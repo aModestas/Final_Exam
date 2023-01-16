@@ -10,8 +10,9 @@
         public string Email { get; set; }
         public byte[] Picture { get; set; }
         public Address Address { get; set; }
+        public User User { get; set; }
         public Person() { }
-        public Person(string name, string lastname, int personcode, int telnumber, string email, byte[] picture, Address address)
+        public Person(string name, string lastname, int personcode, int telnumber, string email, byte[] picture, Address address, User user)
         {
             Name = name;
             Lastname = lastname;
@@ -20,6 +21,7 @@
             Email = email;
             Picture = picture;
             Address = address;  
+            User = user;
         }
 
     }
