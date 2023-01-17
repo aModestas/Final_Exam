@@ -10,6 +10,5 @@ namespace Final_Exam.DB
         public int TelNumber { get; set; }
         public string Email { get; set; }
         public byte[] Picture { get; set; }
-        public Address Address { get; set; }
     }
 }

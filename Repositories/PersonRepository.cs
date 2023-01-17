@@ -23,7 +23,6 @@ namespace Final_Exam.Repositories
                 TelNumber = person.TelNumber,
                 Email = person.Email,
                 Picture = person.Picture,
-                Address = person.Address,
             };
             _context.People.Add(newPerson);
             _context.SaveChanges();
