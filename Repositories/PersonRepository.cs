@@ -6,9 +6,28 @@ namespace Final_Exam.Repositories
 {
     public class PersonRepository : IPersonRepository
     {
+        private readonly ApplicationDBContext _context;
+        private readonly List<Person> _people = new List<Person>();
+        public PersonRepository(ApplicationDBContext context)
+        {
+            _context = context;
+        }
+
         public Person AddNewPerson(PersonDTO person)
         {
-            throw new NotImplementedException();
+            var newPerson = new Person
+            {
+                Name = person.Name,
+                Lastname = person.Lastname,
+                PersonCode = person.PersonCode,
+                TelNumber = person.TelNumber,
+                Email = person.Email,
+                Picture = person.Picture,
+                Address = person.Address,
+            };
+            _context.People.Add(newPerson);
+            _context.SaveChanges();
+            return newPerson;
         }
 
         public Person FindByID(int id)
@@ -18,7 +37,7 @@ namespace Final_Exam.Repositories
 
         public List<Person> GetAllPeople()
         {
-            throw new NotImplementedException();
+            return _context.People.ToList();
         }
     }
 }
