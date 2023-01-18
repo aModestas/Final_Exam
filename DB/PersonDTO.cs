@@ -10,5 +10,9 @@ namespace Final_Exam.DB
         public int TelNumber { get; set; }
         public string Email { get; set; }
         public byte[] Picture { get; set; }
+        public string City { get; set; }
+        public string Street { get; set; }
+        public int HouseNumber { get; set; }
+        public int FlatNumber { get; set; }
     }
 }

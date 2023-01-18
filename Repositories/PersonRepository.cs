@@ -15,6 +15,15 @@ namespace Final_Exam.Repositories
 
         public Person AddNewPerson(PersonDTO person)
         {
+            var newAddress = new Address
+            {
+                City = person.City,
+                Street = person.Street,
+                HouseNumber = person.HouseNumber,
+                FlatNumber = person.FlatNumber,
+            };
+            _context.Addresses.Add(newAddress);
+
             var newPerson = new Person
             {
                 Name = person.Name,
@@ -23,6 +32,7 @@ namespace Final_Exam.Repositories
                 TelNumber = person.TelNumber,
                 Email = person.Email,
                 Picture = person.Picture,
+                Address = newAddress,
             };
             _context.People.Add(newPerson);
             _context.SaveChanges();
