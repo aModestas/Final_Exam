@@ -19,6 +19,16 @@ namespace Final_Exam.Controllers
         {
             return _userrepository.GetAllUsers();
         }
+        [HttpGet("username, password")]
+        public ActionResult<User> UserLogin(string username, string password)
+        {
+            var login = _userrepository.GetLogin(username, password);
+            return Ok(login);
+            if (login == null)
+            {
+                return NotFound();
+            }
+        }
 
         [HttpPost]
         public User Add([FromBody] UserDTO user)
