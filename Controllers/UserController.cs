@@ -35,5 +35,12 @@ namespace Final_Exam.Controllers
         {
             return _userrepository.AddNewUser(user);
         }
+
+        [HttpPut("id")]
+        public User UpdateUserRole([FromQuery] int id)
+        {
+            return _userrepository.UpdateUserRole(id);
+        }
+
     }
 }

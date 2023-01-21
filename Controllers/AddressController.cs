@@ -19,11 +19,5 @@ namespace Final_Exam.Controllers
         {
             return _addressRepository.GetAddresses();
         }
-
-        [HttpPost]
-        public Address Add([FromBody] AddressDTO address)
-        {
-            return _addressRepository.AddNewAddress(address);
-        }
     }
 }

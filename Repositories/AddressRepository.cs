@@ -12,21 +12,6 @@ namespace Final_Exam.Repositories
         {
             _context = context;
         }
-
-        public Address AddNewAddress(AddressDTO address)
-        {
-            var newAddress = new Address
-            {
-                City = address.City,
-                Street = address.Street,
-                HouseNumber = address.HouseNumber,
-                FlatNumber = address.FlatNumber,
-            };
-            _context.Addresses.Add(newAddress);
-            _context.SaveChanges();
-            return newAddress;
-        }
-
         public Address GetAddress(int id)
         {
             throw new NotImplementedException();

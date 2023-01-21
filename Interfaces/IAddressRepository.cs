@@ -7,6 +7,5 @@ namespace Final_Exam.Interfaces
     {
         List<Address> GetAddresses();
         Address GetAddress(int id);
-        Address AddNewAddress(AddressDTO address);
     }
 }

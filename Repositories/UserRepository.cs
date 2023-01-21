@@ -49,5 +49,13 @@ namespace Final_Exam.Repositories
         {
             throw new NotImplementedException();
         }
+
+        public User UpdateUserRole(int id)
+        {
+            var userToUpdate = _context.Users.SingleOrDefault(x => x.Id == id);
+            userToUpdate.Role = "admin";
+            _context.SaveChanges();
+            return userToUpdate;
+        }
     }
 }
