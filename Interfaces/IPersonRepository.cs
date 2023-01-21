@@ -8,5 +8,6 @@ namespace Final_Exam.Interfaces
         List<Person> GetAllPeople();
         Person AddNewPerson(PersonDTO person);
         Person FindByID(int id);
+        Person RemovePerson(int id);
     }
 }

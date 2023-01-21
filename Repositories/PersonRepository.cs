@@ -45,13 +45,26 @@ namespace Final_Exam.Repositories
 
         public Person FindByID(int id)
         {
-            throw new NotImplementedException();
+            var person = _context.People.Include(x => x.Address).Include(p => p.User).Where(m => m.Id == id).FirstOrDefault();
+            return person;
         }
 
         public List<Person> GetAllPeople()
         {
             var people = _context.People.Include(x => x.Address).Include(p => p.User).ToList();
             return people;
+        }
+
+        public Person RemovePerson(int id)
+        {
+            var person = _context.People.Include(x => x.Address).Include(p => p.User).Where(m => m.Id == id).FirstOrDefault();
+            var address = _context.Addresses.Where(x => x.Id == person.AddressId).FirstOrDefault();
+            var user = _context.Users.Where(x => x.Id == person.UserId).FirstOrDefault();
+            _context.People.Remove(person);
+            _context.Addresses.Remove(address);
+            _context.Users.Remove(user);
+            _context.SaveChanges();
+            return person;
         }
     }
 }

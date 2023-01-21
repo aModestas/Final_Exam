@@ -21,10 +21,22 @@ namespace Final_Exam.Controllers
             return _personRepository.GetAllPeople();
         }
 
+        [HttpGet("id")]
+        public Person GetPerson(int id)
+        {
+            return _personRepository.FindByID(id);
+        }
+
         [HttpPost]
         public Person Add([FromBody] PersonDTO person)
         {
             return _personRepository.AddNewPerson(person);
+        }
+
+        [HttpDelete("id")]
+        public Person RemovePerson(int id)
+        {
+            return _personRepository.RemovePerson(id);
         }
     }
 }
