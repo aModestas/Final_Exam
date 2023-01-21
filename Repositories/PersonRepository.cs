@@ -1,6 +1,7 @@
 ﻿using Final_Exam.DB;
 using Final_Exam.Entities;
 using Final_Exam.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
 namespace Final_Exam.Repositories
 {
@@ -49,7 +50,8 @@ namespace Final_Exam.Repositories
 
         public List<Person> GetAllPeople()
         {
-            return _context.People.ToList();
+            var people = _context.People.Include(x => x.Address).Include(p => p.User).ToList();
+            return people;
         }
     }
 }
