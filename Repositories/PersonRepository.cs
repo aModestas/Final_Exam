@@ -8,9 +8,11 @@ namespace Final_Exam.Repositories
     {
         private readonly ApplicationDBContext _context;
         private readonly List<Person> _people = new List<Person>();
-        public PersonRepository(ApplicationDBContext context)
+        private readonly IUserrepository _userrepository;
+        public PersonRepository(ApplicationDBContext context, IUserrepository userrepository)
         {
             _context = context;
+            _userrepository = userrepository;
         }
 
         public Person AddNewPerson(PersonDTO person)
@@ -33,6 +35,7 @@ namespace Final_Exam.Repositories
                 Email = person.Email,
                 Picture = person.Picture,
                 Address = newAddress,
+                User = _userrepository.GetById(person.UserId),
             };
             _context.People.Add(newPerson);
             _context.SaveChanges();

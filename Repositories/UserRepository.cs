@@ -33,7 +33,8 @@ namespace Final_Exam.Repositories
 
         public User GetById(int id)
         {
-            throw new NotImplementedException();
+            var user = _context.Users.Where(x => x.Id == id).FirstOrDefault();
+            return user;
         }
 
         public User GetLogin(string username, string password)
