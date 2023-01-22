@@ -2,6 +2,7 @@
 using Final_Exam.Entities;
 using Final_Exam.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using System;
 
 namespace Final_Exam.Repositories
 {
@@ -65,6 +66,86 @@ namespace Final_Exam.Repositories
             _context.Users.Remove(user);
             _context.SaveChanges();
             return person;
+        }
+
+        public Person UpdateCity(int id, string city)
+        {
+            var personToUpdate = _context.People.Include(x => x.Address).Include(p => p.User).Where(m => m.Id == id).FirstOrDefault();
+            personToUpdate.Address.City = city;
+            _context.SaveChanges();
+            return personToUpdate;
+        }
+
+        public Person UpdateEmail(int id, string email)
+        {
+            var personToUpdate = _context.People.Include(x => x.Address).Include(p => p.User).Where(m => m.Id == id).FirstOrDefault();
+            personToUpdate.Email = email;
+            _context.SaveChanges();
+            return personToUpdate;
+        }
+
+        public Person UpdateFlatNumber(int id, int flatNumber)
+        {
+            var personToUpdate = _context.People.Include(x => x.Address).Include(p => p.User).Where(m => m.Id == id).FirstOrDefault();
+            personToUpdate.Address.FlatNumber = flatNumber;
+            _context.SaveChanges();
+            return personToUpdate;
+        }
+
+        public Person UpdateHouseNumber(int id, int houseNumber)
+        {
+            var personToUpdate = _context.People.Include(x => x.Address).Include(p => p.User).Where(m => m.Id == id).FirstOrDefault();
+            personToUpdate.Address.HouseNumber = houseNumber;
+            _context.SaveChanges();
+            return personToUpdate;
+        }
+
+        public Person UpdateLastName(int id, string lastName)
+        {
+            var personToUpdate = _context.People.Include(x => x.Address).Include(p => p.User).Where(m => m.Id == id).FirstOrDefault();
+            personToUpdate.Lastname = lastName;
+            _context.SaveChanges();
+            return personToUpdate;
+        }
+
+        public Person UpdateName(int id, string name)
+        {
+            var personToUpdate = _context.People.Include(x => x.Address).Include(p => p.User).Where(m => m.Id == id).FirstOrDefault();
+            personToUpdate.Name = name;
+            _context.SaveChanges();
+            return personToUpdate;
+        }
+
+        public Person UpdatePersonCode(int id, int personCode)
+        {
+            var personToUpdate = _context.People.Include(x => x.Address).Include(p => p.User).Where(m => m.Id == id).FirstOrDefault();
+            personToUpdate.PersonCode = personCode;
+            _context.SaveChanges();
+            return personToUpdate;
+        }
+
+        public Person UpdatePicture(int id, byte[] picture)
+        {
+            var personToUpdate = _context.People.Include(x => x.Address).Include(p => p.User).Where(m => m.Id == id).FirstOrDefault();
+            personToUpdate.Picture = picture;
+            _context.SaveChanges();
+            return personToUpdate;
+        }
+
+        public Person UpdateStreet(int id, string street)
+        {
+            var personToUpdate = _context.People.Include(x => x.Address).Include(p => p.User).Where(m => m.Id == id).FirstOrDefault();
+            personToUpdate.Address.Street = street;
+            _context.SaveChanges();
+            return personToUpdate;
+        }
+
+        public Person UpdateTelNumber(int id, int telNumber)
+        {
+            var personToUpdate = _context.People.Include(x => x.Address).Include(p => p.User).Where(m => m.Id == id).FirstOrDefault();
+            personToUpdate.TelNumber = telNumber;
+            _context.SaveChanges();
+            return personToUpdate;
         }
     }
 }
