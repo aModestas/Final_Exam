@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32825.248
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Final_Exam", "Final_Exam.csproj", "{BD0251FD-C4E7-4F89-B5A6-94769B0A019A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Final_Exam", "Final_Exam.csproj", "{BD0251FD-C4E7-4F89-B5A6-94769B0A019A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestsForFinalEgzam", "..\TestsForFinalEgzam\TestsForFinalEgzam.csproj", "{2BE672AD-D6F6-4248-8240-E1A7B6187E89}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{BD0251FD-C4E7-4F89-B5A6-94769B0A019A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BD0251FD-C4E7-4F89-B5A6-94769B0A019A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BD0251FD-C4E7-4F89-B5A6-94769B0A019A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2BE672AD-D6F6-4248-8240-E1A7B6187E89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BE672AD-D6F6-4248-8240-E1A7B6187E89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BE672AD-D6F6-4248-8240-E1A7B6187E89}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BE672AD-D6F6-4248-8240-E1A7B6187E89}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
