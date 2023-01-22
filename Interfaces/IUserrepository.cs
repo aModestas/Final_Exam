@@ -7,9 +7,7 @@ namespace Final_Exam.Interfaces
     {
         List<User> GetAllUsers();
         User AddNewUser(UserDTO user);
-        User GetLogin (string username, string password);
         User GetById(int id);
-        User RemoveUser(int id);
         User UpdateUserRole(int id);
     }
 }

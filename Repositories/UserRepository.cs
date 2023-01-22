@@ -37,19 +37,6 @@ namespace Final_Exam.Repositories
             return user;
         }
 
-        public User GetLogin(string username, string password)
-        {
-            var users = _context.Users.ToList();
-            var user = users.Where(u => u.Username == username && u.Password == password).FirstOrDefault();
-            return user;
-            
-        }
-
-        public User RemoveUser(int id)
-        {
-            throw new NotImplementedException();
-        }
-
         public User UpdateUserRole(int id)
         {
             var userToUpdate = _context.Users.SingleOrDefault(x => x.Id == id);

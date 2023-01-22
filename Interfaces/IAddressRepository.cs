@@ -6,6 +6,5 @@ namespace Final_Exam.Interfaces
     public interface IAddressRepository
     {
         List<Address> GetAddresses();
-        Address GetAddress(int id);
     }
 }

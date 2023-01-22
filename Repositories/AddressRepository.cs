@@ -12,11 +12,6 @@ namespace Final_Exam.Repositories
         {
             _context = context;
         }
-        public Address GetAddress(int id)
-        {
-            throw new NotImplementedException();
-        }
-
         public List<Address> GetAddresses()
         {
             return _context.Addresses.ToList();
